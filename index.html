@@ -1,615 +1,655 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NEXUS GAMES — официальный маркетплейс игровых ключей, доната и валюты. Мгновенная выдача 24/7, защита сделок Escrow, лучшие цены.">
-  <meta name="keywords" content="игры, ключи Steam, донат, игровая валюта, купить игры, скидки, NEXUS GAMES">
-  <meta name="author" content="NEXUS GAMES">
-  <meta name="theme-color" content="#0B0E14">
-  
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="NEXUS GAMES — Игры и ключи по лучшим ценам">
-  <meta property="og:description" content="Мгновенная выдача ключей 24/7. Защита сделок Escrow. Покупай хиты, инди и внутриигровую валюту в один клик.">
-  <meta property="og:image" content="images/og-image.jpg">
-  
-  <title>NEXUS GAMES — Игровой маркетплейс | Ключи Steam, Донат, Валюта</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/components.css">
-  <link rel="stylesheet" href="css/responsive.css">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%236366F1' rx='20' width='100' height='100'/><text x='50' y='68' font-size='60' text-anchor='middle' fill='white'>🎮</text></svg>">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS GAMES - Игровой маркетплейс | Ключи, игры и донт по лучшим ценам</title>
+    <meta name="description" content="Официальный маркетплейс с защитой сделок Escrow. Покупай хиты, инди и внутриигровую валюту в один клик. Мгновенная выдача ключей 24/7.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <!-- Logo -->
-      <a href="#" class="logo">
-        <div class="logo-icon">🎮</div>
-        <span>NEXUS GAMES</span>
-      </a>
-      
-      <!-- Navigation -->
-      <nav class="nav-menu">
-        <a href="#products" class="nav-link">Каталог</a>
-        <a href="#features" class="nav-link">Гарантии</a>
-        <a href="#reviews" class="nav-link">Отзывы</a>
-        <a href="#faq" class="nav-link">FAQ</a>
-        <a href="#support" class="nav-link">Поддержка</a>
-      </nav>
-      
-      <!-- Right Section -->
-      <div class="header-right">
-        <!-- Status Indicator -->
-        <div class="status-indicator">
-          <span class="status-dot"></span>
-          <span>Серверы: 99.9%</span>
-        </div>
-        
-        <!-- Currency Selector -->
-        <button class="currency-selector" aria-label="Выбрать валюту">
-          <span>💱</span>
-          <span>KZT</span>
-          <span>▼</span>
-        </button>
-        
-        <!-- Steam Login -->
-        <button class="btn-steam">
-          <span>🎯</span>
-          <span>Войти через Steam</span>
-        </button>
-        
-        <!-- Mobile Toggle -->
-        <button class="mobile-toggle" aria-label="Меню">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-    
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-      <div class="mobile-menu-links">
-        <a href="#products" class="mobile-menu-link">Каталог</a>
-        <a href="#features" class="mobile-menu-link">Гарантии</a>
-        <a href="#reviews" class="mobile-menu-link">Отзывы</a>
-        <a href="#faq" class="mobile-menu-link">FAQ</a>
-        <a href="#support" class="mobile-menu-link">Поддержка</a>
-      </div>
-    </div>
-  </header>
 
-  <main>
-    <!-- Hero Section -->
+    <!-- ========================================
+         HEADER / Навигация
+         ======================================== -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Логотип -->
+            <a href="#" class="logo">
+                <div class="logo-icon">🎮</div>
+                <span class="text-gradient">NEXUS GAMES</span>
+            </a>
+            
+            <!-- Навигационное меню -->
+            <nav class="nav-menu">
+                <a href="#catalog" class="nav-link">Каталог</a>
+                <a href="#guarantees" class="nav-link">Гарантии</a>
+                <a href="#reviews" class="nav-link">Отзывы</a>
+                <a href="#faq" class="nav-link">FAQ</a>
+                <a href="#support" class="nav-link">Поддержка</a>
+            </nav>
+            
+            <!-- Индикатор статуса -->
+            <div class="server-status">
+                <span class="status-dot"></span>
+                <span>Серверы работают: 99.9%</span>
+            </div>
+            
+            <!-- Авторизация -->
+            <div class="auth-buttons">
+                <select class="currency-selector">
+                    <option value="KZT">KZT ₸</option>
+                    <option value="RUB">RUB ₽</option>
+                    <option value="USD">USD $</option>
+                </select>
+                <button class="btn btn-secondary" data-modal="login">
+                    <span>🎯</span> Войти через Steam
+                </button>
+            </div>
+            
+            <!-- Мобильное меню -->
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========================================
+         HERO SECTION
+         ======================================== -->
     <section class="hero">
-      <div class="container hero-inner">
-        <!-- Left Content -->
-        <div class="hero-content fade-in">
-          <div class="hero-badge">
-            <span>⚡</span>
-            <span>Мгновенная выдача ключей 24/7</span>
-          </div>
-          
-          <h1 class="hero-title">
-            Игры, ключи и донат<br>
-            <span class="hero-title-accent">по лучшим ценам</span> без переплат
-          </h1>
-          
-          <p class="hero-subtitle">
-            Официальный маркетплейс с защитой сделок Escrow. Покупай хиты, инди и внутриигровую валюту в один клик.
-          </p>
-          
-          <!-- Search Box -->
-          <div class="search-box">
-            <div class="search-input-wrapper">
-              <span class="search-icon">🔍</span>
-              <input 
-                type="text" 
-                class="search-input" 
-                placeholder="Найти игру, например: Cyberpunk 2077, Steam Wallet, CS2 скины..."
-                aria-label="Поиск игр"
-              >
-            </div>
-            <button class="btn btn-primary search-btn">Найти</button>
-          </div>
-          
-          <!-- Quick Tags -->
-          <div class="quick-tags">
-            <span class="quick-tag">#Steam</span>
-            <span class="quick-tag">#Roblox</span>
-            <span class="quick-tag">#Terraria</span>
-            <span class="quick-tag">#PlayStation</span>
-            <span class="quick-tag">#Топ скидки</span>
-          </div>
-        </div>
-        
-        <!-- Right Visual -->
-        <div class="hero-visual fade-in">
-          <div class="hero-card">
-            <span class="hero-card-discount">-45%</span>
-            <div class="hero-card-image">🎲</div>
-            <div class="hero-card-info">
-              <div>
-                <h3 class="hero-card-title">Cyberpunk 2077</h3>
-                <p class="hero-card-platform">Steam Key • Global</p>
-              </div>
-              <div class="hero-card-price">
-                <p class="hero-card-old-price">24 990 ₸</p>
-                <p class="hero-card-new-price">13 745 ₸</p>
-              </div>
-            </div>
-            <div class="hero-card-timer">
-              <p class="hero-card-timer-label">До конца акции</p>
-              <p class="hero-card-timer-value">23:59:59</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Categories Section -->
-    <section class="section categories">
-      <div class="container">
-        <div class="categories-header">
-          <h2 class="section-title">Популярные категории</h2>
-          <a href="#products" class="btn btn-outline">Смотреть все каталоги →</a>
-        </div>
-        
-        <div class="grid grid-4">
-          <div class="card category-card fade-in">
-            <span class="category-icon">🖥️</span>
-            <h3 class="category-title">Игры для PC</h3>
-            <p class="category-count">12 450+ товаров</p>
-          </div>
-          
-          <div class="card category-card fade-in">
-            <span class="category-icon">🔑</span>
-            <h3 class="category-title">Ключи активации</h3>
-            <p class="category-count">8 320+ товаров</p>
-          </div>
-          
-          <div class="card category-card fade-in">
-            <span class="category-icon">💎</span>
-            <h3 class="category-title">Донат и Валюта</h3>
-            <p class="category-count">5 670+ товаров</p>
-          </div>
-          
-          <div class="card category-card fade-in">
-            <span class="category-icon">📦</span>
-            <h3 class="category-title">Подписки и Сервисы</h3>
-            <p class="category-count">2 890+ товаров</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="products" class="section products">
-      <div class="container">
-        <h2 class="section-title" style="margin-bottom: 32px;">Горячие предложения 🔥</h2>
-        
-        <!-- Tabs -->
-        <div class="tabs products-tabs">
-          <button class="tab-btn active" data-tab="all">Все хиты</button>
-          <button class="tab-btn" data-tab="discounts">Скидки дня</button>
-          <button class="tab-btn" data-tab="preorders">Предзаказы</button>
-          <button class="tab-btn" data-tab="currency">Игровая валюта</button>
-        </div>
-        
-        <!-- Products Grid - All -->
-        <div class="grid grid-4 products-grid" data-category="all">
-          <!-- Product 1 -->
-          <div class="card product-card fade-in">
-            <div class="product-image">
-              <span class="product-badge">-40%</span>
-              <span class="product-platform">Steam</span>
-              🎮
-            </div>
-            <h3 class="product-title">The Witcher 3: Wild Hunt GOTY</h3>
-            <div class="product-prices">
-              <span class="product-old-price">9 990 ₸</span>
-              <span class="product-new-price">5 994 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Купить в 1 клик</button>
-          </div>
-          
-          <!-- Product 2 -->
-          <div class="card product-card fade-in">
-            <div class="product-image">
-              <span class="product-badge">-25%</span>
-              <span class="product-platform">Epic</span>
-              🚀
-            </div>
-            <h3 class="product-title">Rocket League Starter Pack</h3>
-            <div class="product-prices">
-              <span class="product-old-price">3 490 ₸</span>
-              <span class="product-new-price">2 618 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Купить в 1 клик</button>
-          </div>
-          
-          <!-- Product 3 -->
-          <div class="card product-card fade-in">
-            <div class="product-image">
-              <span class="product-badge">-50%</span>
-              <span class="product-platform">Steam</span>
-              ⚔️
-            </div>
-            <h3 class="product-title">Elden Ring Standard Edition</h3>
-            <div class="product-prices">
-              <span class="product-old-price">29 990 ₸</span>
-              <span class="product-new-price">14 995 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Купить в 1 клик</button>
-          </div>
-          
-          <!-- Product 4 -->
-          <div class="card product-card fade-in">
-            <div class="product-image">
-              <span class="product-platform">Xbox</span>
-              🎯
-            </div>
-            <h3 class="product-title">Game Pass Ultimate 3 месяца</h3>
-            <div class="product-prices">
-              <span class="product-old-price">7 990 ₸</span>
-              <span class="product-new-price">7 990 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Купить в 1 клик</button>
-          </div>
-        </div>
-        
-        <!-- Products Grid - Discounts (hidden by default) -->
-        <div class="grid grid-4 products-grid" data-category="discounts" style="display: none;">
-          <div class="card product-card">
-            <div class="product-image">
-              <span class="product-badge">-60%</span>
-              <span class="product-platform">Steam</span>
-              🏎️
-            </div>
-            <h3 class="product-title">Forza Horizon 5 Premium</h3>
-            <div class="product-prices">
-              <span class="product-old-price">19 990 ₸</span>
-              <span class="product-new-price">7 996 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Купить в 1 клик</button>
-          </div>
-          
-          <div class="card product-card">
-            <div class="product-image">
-              <span class="product-badge">-35%</span>
-              <span class="product-platform">PSN</span>
-              🕷️
-            </div>
-            <h3 class="product-title">Spider-Man Remastered</h3>
-            <div class="product-prices">
-              <span class="product-old-price">24 990 ₸</span>
-              <span class="product-new-price">16 244 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Купить в 1 клик</button>
-          </div>
-        </div>
-        
-        <!-- Products Grid - Preorders (hidden by default) -->
-        <div class="grid grid-4 products-grid" data-category="preorders" style="display: none;">
-          <div class="card product-card">
-            <div class="product-image">
-              <span class="product-badge badge-danger">PRE</span>
-              <span class="product-platform">Steam</span>
-              🌌
-            </div>
-            <h3 class="product-title">Starfield Deluxe Edition</h3>
-            <div class="product-prices">
-              <span class="product-new-price">34 990 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Предзаказ</button>
-          </div>
-        </div>
-        
-        <!-- Products Grid - Currency (hidden by default) -->
-        <div class="grid grid-4 products-grid" data-category="currency" style="display: none;">
-          <div class="card product-card">
-            <div class="product-image">
-              <span class="product-platform">Roblox</span>
-              💰
-            </div>
-            <h3 class="product-title">Robux 4 500 монет</h3>
-            <div class="product-prices">
-              <span class="product-new-price">2 490 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Купить в 1 клик</button>
-          </div>
-          
-          <div class="card product-card">
-            <div class="product-image">
-              <span class="product-platform">Steam</span>
-              💳
-            </div>
-            <h3 class="product-title">Steam Wallet 5 000 ₸</h3>
-            <div class="product-prices">
-              <span class="product-new-price">5 200 ₸</span>
-            </div>
-            <button class="btn btn-primary product-btn">Купить в 1 клик</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="section features">
-      <div class="container">
-        <h2 class="section-title" style="text-align: center; margin-bottom: 48px;">Почему геймеры выбирают NEXUS</h2>
-        
-        <div class="features-grid">
-          <div class="card feature-card fade-in">
-            <div class="feature-icon">⚡</div>
-            <h3 class="feature-title">Мгновенная доставка</h3>
-            <p class="feature-desc">Ключ или товар приходит на почту и в личный кабинет за 3 секунды после оплаты.</p>
-          </div>
-          
-          <div class="card feature-card fade-in">
-            <div class="feature-icon">🛡️</div>
-            <h3 class="feature-title">Безопасная сделка (Escrow)</h3>
-            <p class="feature-desc">Деньги перечисляются продавцу только после успешной активации товара.</p>
-          </div>
-          
-          <div class="card feature-card fade-in">
-            <div class="feature-icon">💬</div>
-            <h3 class="feature-title">Поддержка 24/7</h3>
-            <p class="feature-desc">Живые операторы готовы помочь решить любой вопрос в чате за 60 секунд.</p>
-          </div>
-          
-          <div class="card feature-card fade-in">
-            <div class="feature-icon">🏷️</div>
-            <h3 class="feature-title">Лучшие цены</h3>
-            <p class="feature-desc">Прямые поставки от издателей и партнёрские скидки до 70%.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="section reviews">
-      <div class="container">
-        <div class="reviews-header fade-in">
-          <div class="reviews-rating">
-            <span class="reviews-stars">★★★★★</span>
-            <span class="reviews-count">4.9 / 5.0 на основе 14 200+ отзывов</span>
-          </div>
-        </div>
-        
-        <div class="reviews-slider fade-in">
-          <div class="reviews-track">
-            <!-- Review 1 -->
-            <div class="card review-card">
-              <div class="review-header">
-                <div class="review-avatar">AK</div>
-                <div class="review-info">
-                  <p class="review-name">Alexey K.</p>
-                  <p class="review-product">Купил: Steam Deck Key</p>
-                  <p class="review-rating">★★★★★</p>
+        <div class="hero-container">
+            <!-- Левая часть (Текст) -->
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span>⚡</span> Мгновенная выдача ключей 24/7
                 </div>
-              </div>
-              <p class="review-text">«Отличный сервис! Ключ пришёл моментально, активировался без проблем. Цены ниже чем везде. Рекомендую!»</p>
-              <div class="review-verified">✓ Подтверждённая покупка</div>
+                
+                <h1 class="hero-title">
+                    Игры, ключи и <span class="highlight">донат</span> по лучшим ценам без переплат
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Официальный маркетплейс с защитой сделок Escrow. Покупай хиты, инди и внутриигровую валюту в один клик.
+                </p>
+                
+                <!-- Поиск -->
+                <div class="search-bar">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" class="search-input" placeholder="Найти игру, например: Cyberpunk 2077, Steam Wallet, CS2 скины...">
+                    <button class="search-btn">Найти</button>
+                </div>
+                
+                <!-- Быстрые теги -->
+                <div class="quick-tags">
+                    <span class="tag">#Steam</span>
+                    <span class="tag">#Roblox</span>
+                    <span class="tag">#Terraria</span>
+                    <span class="tag">#PlayStation</span>
+                    <span class="tag">#Топ скидки</span>
+                </div>
             </div>
             
-            <!-- Review 2 -->
-            <div class="card review-card">
-              <div class="review-header">
-                <div class="review-avatar">MD</div>
-                <div class="review-info">
-                  <p class="review-name">Maria D.</p>
-                  <p class="review-product">Купила: Robux 10 000</p>
-                  <p class="review-rating">★★★★★</p>
+            <!-- Правая часть (Визуал) -->
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <img src="https://picsum.photos/seed/cyberpunk/600/400" alt="Cyberpunk 2077" class="hero-card-image">
+                    <div class="hero-card-overlay"></div>
+                    <div class="discount-badge">-45%</div>
+                    <div class="hero-card-content">
+                        <h3>Cyberpunk 2077: Phantom Liberty</h3>
+                        <p class="text-success" style="font-size: 1.5rem; font-weight: 700; margin: 0.5rem 0;">12 990 ₸</p>
+                        <p style="color: var(--text-muted); text-decoration: line-through;">23 990 ₸</p>
+                        <div class="timer">
+                            <div class="timer-item">
+                                <div class="timer-value timer-hours">23</div>
+                                <div class="timer-label">Часов</div>
+                            </div>
+                            <div class="timer-item">
+                                <div class="timer-value timer-minutes">59</div>
+                                <div class="timer-label">Минут</div>
+                            </div>
+                            <div class="timer-item">
+                                <div class="timer-value timer-seconds">59</div>
+                                <div class="timer-label">Секунд</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <p class="review-text">«Покупала робуксы сыну. Всё пришло за пару минут, цена намного выгоднее чем в официальном магазине. Буду обращаться ещё!»</p>
-              <div class="review-verified">✓ Подтверждённая покупка</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         КАТЕГОРИИ
+         ======================================== -->
+    <section class="section" id="catalog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Популярные категории</h2>
+                <button class="btn btn-outline">Смотреть все каталоги →</button>
             </div>
             
-            <!-- Review 3 -->
-            <div class="card review-card">
-              <div class="review-header">
-                <div class="review-avatar">IS</div>
-                <div class="review-info">
-                  <p class="review-name">Ivan S.</p>
-                  <p class="review-product">Купил: Elden Ring</p>
-                  <p class="review-rating">★★★★★</p>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">💻</div>
+                    <h3 class="category-title">Игры для PC</h3>
                 </div>
-              </div>
-              <p class="review-text">«Скидка 50% — это просто огонь! Игра работает, ключ глобальный. Поддержка ответила за минуту на мой вопрос.»</p>
-              <div class="review-verified">✓ Подтверждённая покупка</div>
+                <div class="category-card">
+                    <div class="category-icon">🔑</div>
+                    <h3 class="category-title">Ключи активации</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💎</div>
+                    <h3 class="category-title">Донат и Валюта</h3>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">📦</div>
+                    <h3 class="category-title">Подписки и Сервисы</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ВИТРИНА ТОВАРОВ
+         ======================================== -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2>Горячие предложения 🔥</h2>
             </div>
             
-            <!-- Review 4 -->
-            <div class="card review-card">
-              <div class="review-header">
-                <div class="review-avatar">DK</div>
-                <div class="review-info">
-                  <p class="review-name">Dmitry K.</p>
-                  <p class="review-product">Купил: Game Pass 12 мес</p>
-                  <p class="review-rating">★★★★☆</p>
+            <!-- Табы фильтрации -->
+            <div class="tabs">
+                <button class="tab-btn active" data-filter="all">Все хиты</button>
+                <button class="tab-btn" data-filter="discounts">Скидки дня</button>
+                <button class="tab-btn" data-filter="preorders">Предзаказы</button>
+                <button class="tab-btn" data-filter="currency">Игровая валюта</button>
+            </div>
+            
+            <!-- Сетка товаров -->
+            <div class="products-grid">
+                <!-- Товар 1 -->
+                <div class="product-card" data-category="discounts">
+                    <img src="https://picsum.photos/seed/eldenring/400/280" alt="Elden Ring" class="product-image">
+                    <span class="product-badge">-40%</span>
+                    <div class="product-info">
+                        <h3 class="product-title">Elden Ring</h3>
+                        <span class="product-platform">Steam</span>
+                        <div class="product-prices">
+                            <span class="old-price">19 990 ₸</span>
+                            <span class="new-price" data-original="11990">11 990 ₸</span>
+                        </div>
+                        <button class="product-btn btn-ripple" data-modal="checkout">Купить в 1 клик</button>
+                    </div>
                 </div>
-              </div>
-              <p class="review-text">«Всё хорошо, но пришлось немного подождать код. В итоге всё активировалось, играю уже неделю. Цена топ!»</p>
-              <div class="review-verified">✓ Подтверждённая покупка</div>
-            </div>
-          </div>
-          
-          <div class="reviews-nav">
-            <button class="reviews-nav-btn reviews-prev" aria-label="Предыдущий отзыв">←</button>
-            <button class="reviews-nav-btn reviews-next" aria-label="Следующий отзыв">→</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="section faq">
-      <div class="container">
-        <h2 class="section-title" style="text-align: center; margin-bottom: 48px;">Часто задаваемые вопросы</h2>
-        
-        <div class="faq-container">
-          <!-- FAQ Item 1 -->
-          <div class="accordion-item fade-in">
-            <button class="accordion-header">
-              <span>Как активировать полученный ключ в Steam?</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="accordion-content-inner faq-answer">
-                <p>1. Откройте клиент Steam и войдите в свой аккаунт</p>
-                <p>2. Нажмите «Игры» → «Активировать в Steam»</p>
-                <p>3. Введите ключ из письма или личного кабинета</p>
-                <p>4. Подтвердите активацию — игра добавится в библиотеку</p>
-              </div>
-            </div>
-          </div>
-          
-          <!-- FAQ Item 2 -->
-          <div class="accordion-item fade-in">
-            <button class="accordion-header">
-              <span>Что делать, если ключ не подошёл?</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="accordion-content-inner faq-answer">
-                <p>Не переживайте! Наша система защиты Escrow гарантирует возврат средств:</p>
-                <ul>
-                  <li>✓ Сделайте скриншот ошибки активации</li>
-                  <li>✓ Напишите в поддержку через чат на сайте</li>
-                  <li>✓ Приложите скриншот и номер заказа</li>
-                  <li>✓ Мы проверим и вернём деньги в течение 2 часов</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <!-- FAQ Item 3 -->
-          <div class="accordion-item fade-in">
-            <button class="accordion-header">
-              <span>Какие способы оплаты вы принимаете?</span>
-              <span class="accordion-icon">+</span>
-            </button>
-            <div class="accordion-content">
-              <div class="accordion-content-inner faq-answer">
-                <p>Мы принимаем все популярные способы оплаты:</p>
-                <div class="payment-icons">
-                  <span class="payment-icon">💳 Карты Visa/MC</span>
-                  <span class="payment-icon">📱 Kaspi Pay</span>
-                  <span class="payment-icon">₿ Криптовалюта</span>
-                  <span class="payment-icon">📲 Qiwi / ЮMoney</span>
+                
+                <!-- Товар 2 -->
+                <div class="product-card" data-category="discounts">
+                    <img src="https://picsum.photos/seed/witcher/400/280" alt="The Witcher 3" class="product-image">
+                    <span class="product-badge">-75%</span>
+                    <div class="product-info">
+                        <h3 class="product-title">The Witcher 3: Wild Hunt GOTY</h3>
+                        <span class="product-platform">GOG</span>
+                        <div class="product-prices">
+                            <span class="old-price">11 990 ₸</span>
+                            <span class="new-price" data-original="2990">2 990 ₸</span>
+                        </div>
+                        <button class="product-btn btn-ripple" data-modal="checkout">Купить в 1 клик</button>
+                    </div>
                 </div>
-                <p style="margin-top: 12px;">Все платежи защищены по стандарту PCI DSS Level 1.</p>
-              </div>
+                
+                <!-- Товар 3 -->
+                <div class="product-card" data-category="preorders">
+                    <img src="https://picsum.photos/seed/gta6/400/280" alt="GTA VI" class="product-image">
+                    <span class="product-badge" style="background: var(--warning-orange);">PRE-ORDER</span>
+                    <div class="product-info">
+                        <h3 class="product-title">Grand Theft Auto VI</h3>
+                        <span class="product-platform">Steam</span>
+                        <div class="product-prices">
+                            <span class="new-price" data-original="29990">29 990 ₸</span>
+                        </div>
+                        <button class="product-btn btn-ripple" data-modal="checkout">Предзаказ</button>
+                    </div>
+                </div>
+                
+                <!-- Товар 4 -->
+                <div class="product-card" data-category="currency">
+                    <img src="https://picsum.photos/seed/roblox/400/280" alt="Roblox Robux" class="product-image">
+                    <span class="product-badge">-10%</span>
+                    <div class="product-info">
+                        <h3 class="product-title">Roblox 10,000 Robux</h3>
+                        <span class="product-platform">Roblox</span>
+                        <div class="product-prices">
+                            <span class="old-price">5 500 ₸</span>
+                            <span class="new-price" data-original="4950">4 950 ₸</span>
+                        </div>
+                        <button class="product-btn btn-ripple" data-modal="checkout">Купить в 1 клик</button>
+                    </div>
+                </div>
+                
+                <!-- Товар 5 -->
+                <div class="product-card" data-category="discounts">
+                    <img src="https://picsum.photos/seed/csgo/400/280" alt="CS2 Prime" class="product-image">
+                    <span class="product-badge">-25%</span>
+                    <div class="product-info">
+                        <h3 class="product-title">Counter-Strike 2 Prime</h3>
+                        <span class="product-platform">Steam</span>
+                        <div class="product-prices">
+                            <span class="old-price">6 990 ₸</span>
+                            <span class="new-price" data-original="5240">5 240 ₸</span>
+                        </div>
+                        <button class="product-btn btn-ripple" data-modal="checkout">Купить в 1 клик</button>
+                    </div>
+                </div>
+                
+                <!-- Товар 6 -->
+                <div class="product-card" data-category="currency">
+                    <img src="https://picsum.photos/seed/genshin/400/280" alt="Genshin Impact" class="product-image">
+                    <span class="product-badge">-15%</span>
+                    <div class="product-info">
+                        <h3 class="product-title">Genshin Impact 3280 Genesis Crystals</h3>
+                        <span class="product-platform">HoYoverse</span>
+                        <div class="product-prices">
+                            <span class="old-price">18 990 ₸</span>
+                            <span class="new-price" data-original="16140">16 140 ₸</span>
+                        </div>
+                        <button class="product-btn btn-ripple" data-modal="checkout">Купить в 1 клик</button>
+                    </div>
+                </div>
+                
+                <!-- Товар 7 -->
+                <div class="product-card" data-category="preorders">
+                    <img src="https://picsum.photos/seed/stalker/400/280" alt="STALKER 2" class="product-image">
+                    <span class="product-badge" style="background: var(--warning-orange);">PRE-ORDER</span>
+                    <div class="product-info">
+                        <h3 class="product-title">S.T.A.L.K.E.R. 2: Heart of Chornobyl</h3>
+                        <span class="product-platform">Xbox/PC</span>
+                        <div class="product-prices">
+                            <span class="new-price" data-original="24990">24 990 ₸</span>
+                        </div>
+                        <button class="product-btn btn-ripple" data-modal="checkout">Предзаказ</button>
+                    </div>
+                </div>
+                
+                <!-- Товар 8 -->
+                <div class="product-card" data-category="discounts">
+                    <img src="https://picsum.photos/seed/minecraft/400/280" alt="Minecraft" class="product-image">
+                    <span class="product-badge">-30%</span>
+                    <div class="product-info">
+                        <h3 class="product-title">Minecraft Java & Bedrock</h3>
+                        <span class="product-platform">Microsoft</span>
+                        <div class="product-prices">
+                            <span class="old-price">9 990 ₸</span>
+                            <span class="new-price" data-original="6990">6 990 ₸</span>
+                        </div>
+                        <button class="product-btn btn-ripple" data-modal="checkout">Купить в 1 клик</button>
+                    </div>
+                </div>
             </div>
-          </div>
-          
-          <!-- FAQ Item 4 -->
-          <div class="accordion-item fade-in">
-            <button class="accordion-header">
-              <span>Есть ли гарантия на товары?</span>
-              <span class="accordion-icon">+</span>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ПРЕИМУЩЕСТВА
+         ======================================== -->
+    <section class="section" id="guarantees">
+        <div class="container">
+            <h2 style="text-align: center;">Почему геймеры выбирают NEXUS</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Мгновенная доставка</h3>
+                    <p class="feature-desc">Ключ или товар приходит на почту и в личный кабинет за 3 секунды после оплаты.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Безопасная сделка (Escrow)</h3>
+                    <p class="feature-desc">Деньги перечисляются продавцу только после успешной активации товара.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Поддержка 24/7</h3>
+                    <p class="feature-desc">Живые операторы готовы помочь решить любой вопрос в чате за 60 секунд.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3 class="feature-title">Лучшие цены</h3>
+                    <p class="feature-desc">Прямые поставки от издателей и партнёрские скидки до 75%.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         ОТЗЫВЫ
+         ======================================== -->
+    <section class="section" id="reviews">
+        <div class="container">
+            <div class="reviews-header">
+                <div class="rating-large">4.9 / 5.0</div>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p>на основе 14,200+ отзывов</p>
+            </div>
+            
+            <div class="reviews-slider">
+                <div class="reviews-track">
+                    <!-- Отзыв 1 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://picsum.photos/seed/user1/50/50" alt="User" class="review-avatar">
+                            <div>
+                                <div class="review-user">Alex_Gamer</div>
+                                <div class="review-product">Купил: Elden Ring Key</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">Всё пришло моментально! Активировал ключ в Steam без проблем. Цены реально ниже чем в официальном магазине. Рекомендую!</p>
+                        <div class="verified-badge">✓ Подтверждённая покупка</div>
+                    </div>
+                    
+                    <!-- Отзыв 2 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://picsum.photos/seed/user2/50/50" alt="User" class="review-avatar">
+                            <div>
+                                <div class="review-user">Marina_KZ</div>
+                                <div class="review-product">Купил: Roblox 10000 Robux</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">Покупала робуксы сыну. Всё зачислилось сразу, цена намного выгоднее чем в приложении. Спасибо за быстрый сервис!</p>
+                        <div class="verified-badge">✓ Подтверждённая покупка</div>
+                    </div>
+                    
+                    <!-- Отзыв 3 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://picsum.photos/seed/user3/50/50" alt="User" class="review-avatar">
+                            <div>
+                                <div class="review-user">ProGamer2024</div>
+                                <div class="review-product">Купил: CS2 Prime Status</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">Прайм активировался за минуту. Играю уже неделю, никаких проблем. Буду заказывать ещё!</p>
+                        <div class="verified-badge">✓ Подтверждённая покупка</div>
+                    </div>
+                    
+                    <!-- Отзыв 4 -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://picsum.photos/seed/user4/50/50" alt="User" class="review-avatar">
+                            <div>
+                                <div class="review-user">Dmitry_S</div>
+                                <div class="review-product">Купил: The Witcher 3 GOTY</div>
+                            </div>
+                        </div>
+                        <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        <p class="review-text">За такую цену это просто подарок! Все DLC включены, ключ рабочий. Поддержка ответила за 2 минуты когда была вопрос.</p>
+                        <div class="verified-badge">✓ Подтверждённая покупка</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="slider-controls">
+                <button class="slider-btn slider-prev">←</button>
+                <button class="slider-btn slider-next">→</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FAQ
+         ======================================== -->
+    <section class="section" id="faq">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Часто задаваемые вопросы</h2>
+            
+            <div class="faq-container">
+                <!-- Вопрос 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Как активировать полученный ключ в Steam?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>1. Откройте клиент Steam и войдите в свой аккаунт</p>
+                            <p>2. Нажмите «Игры» → «Активировать в Steam»</p>
+                            <p>3. Введите полученный ключ и нажмите «Далее»</p>
+                            <p>4. Игра появится в вашей библиотеке и будет доступна для скачивания</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Вопрос 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Что делать, если ключ не подошёл?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Не переживайте! Наша система защиты Escrow гарантирует возврат средств:</p>
+                            <p>1. Напишите в поддержку в течение 24 часов</p>
+                            <p>2. Приложите скриншот ошибки активации</p>
+                            <p>3. Мы проверим ключ и вернём деньги в течение 2 часов</p>
+                            <p>Или предложим замену на аналогичный товар</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Вопрос 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Какие способы оплаты вы принимаете?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>Мы принимаем множество способов оплаты:</p>
+                            <div class="payment-methods">
+                                <span class="payment-icon">💳 Kaspi Gold</span>
+                                <span class="payment-icon">💳 Банковские карты (Visa/Mastercard)</span>
+                                <span class="payment-icon">₿ Криптовалюта (BTC, ETH, USDT)</span>
+                                <span class="payment-icon">📱 Qiwi / ЮMoney</span>
+                                <span class="payment-icon">🏦 Банковский перевод</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Вопрос 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Как быстро я получу товар после оплаты?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p>99% заказов обрабатываются автоматически:</p>
+                            <p>• Ключи приходят мгновенно (до 3 секунд)</p>
+                            <p>• Донат и валюта — от 1 до 5 минут</p>
+                            <p>• Предзаказы — в день релиза игры</p>
+                            <p>Ключ и инструкция всегда приходят на email и сохраняются в личном кабинете</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         CTA BLOCK
+         ======================================== -->
+    <section class="section">
+        <div class="container">
+            <div class="cta">
+                <div class="cta-content">
+                    <h2 class="cta-title">Готов начать играть без переплат?</h2>
+                    <p class="cta-subtitle">Забирай свою любимую игру прямо сейчас со скидкой до 75%</p>
+                    <button class="cta-btn btn btn-primary btn-ripple">Перейти в каталог игр →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Колонка 1 -->
+                <div>
+                    <div class="footer-logo">
+                        <div class="logo-icon">🎮</div>
+                        <span class="text-gradient">NEXUS GAMES</span>
+                    </div>
+                    <p class="footer-desc">Официальный маркетплейс цифровых товаров. Лучшие цены, мгновенная доставка, гарантия безопасности.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">✈️</a>
+                        <a href="#" class="social-link">💬</a>
+                        <a href="#" class="social-link">🎵</a>
+                        <a href="#" class="social-link">📘</a>
+                    </div>
+                </div>
+                
+                <!-- Колонка 2 -->
+                <div>
+                    <h4 class="footer-title">Категории</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Игры для PC</a></li>
+                        <li><a href="#" class="footer-link">Ключи активации</a></li>
+                        <li><a href="#" class="footer-link">Донат и Валюта</a></li>
+                        <li><a href="#" class="footer-link">Подарочные карты</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Колонка 3 -->
+                <div>
+                    <h4 class="footer-title">Покупателям</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">Гарантии</a></li>
+                        <li><a href="#" class="footer-link">Правила возврата</a></li>
+                        <li><a href="#" class="footer-link">Соглашение о конфиденциальности</a></li>
+                        <li><a href="#" class="footer-link">Поддержка</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Колонка 4 -->
+                <div>
+                    <h4 class="footer-title">Контакты</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="footer-link">support@nexusgames.kz</a></li>
+                        <li><a href="#" class="footer-link">Telegram: @nexus_support</a></li>
+                        <li><a href="#" class="footer-link">Discord сервер</a></li>
+                        <li><a href="#" class="footer-link">Режим работы: 24/7</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2024 NEXUS GAMES. Все права защищены. Торговые марки принадлежат их правообладателям.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         МОДАЛЬНОЕ ОКНО - ВХОД
+         ======================================== -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal">
+            <button class="modal-close">×</button>
+            <h3 class="modal-title">Вход в аккаунт</h3>
+            <p class="modal-subtitle">Войдите чтобы получать бонусы и скидки</p>
+            
+            <button class="steam-btn">
+                <span>🎮</span> Войти через Steam
             </button>
-            <div class="accordion-content">
-              <div class="accordion-content-inner faq-answer">
-                <p>Да! Все товары имеют гарантию:</p>
-                <ul>
-                  <li>✓ Ключи — гарантия активации 100%</li>
-                  <li>✓ Игровая валюта — гарантия зачисления</li>
-                  <li>✓ Подписки — гарантия работы весь срок</li>
-                </ul>
-                <p>Если что-то пойдёт не так — полный возврат средств.</p>
-              </div>
-            </div>
-          </div>
+            
+            <div class="divider">или через email</div>
+            
+            <form class="modal-form" id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Пароль</label>
+                    <input type="password" class="form-input" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Войти</button>
+            </form>
+            
+            <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary);">
+                Нет аккаунта? <a href="#" class="text-accent">Зарегистрироваться</a>
+            </p>
         </div>
-      </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="section cta-section">
-      <div class="container">
-        <div class="cta fade-in">
-          <div class="cta-content">
-            <h2 class="cta-title">Готов начать играть без переплат?</h2>
-            <p class="cta-subtitle">Забирай свою любимую игру прямо сейчас со скидкой до 70%</p>
-            <a href="#products" class="btn btn-primary cta-btn">Перейти в каталог игр →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer id="support" class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <!-- Brand Column -->
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <span>🎮</span>
-            <span>NEXUS GAMES</span>
-          </div>
-          <p class="footer-desc">Официальный маркетплейс игровых ключей, доната и валюты. Работаем с 2020 года.</p>
-        </div>
-        
-        <!-- Categories Column -->
-        <div>
-          <h4 class="footer-title">Категории</h4>
-          <ul class="footer-links">
-            <li class="footer-link"><a href="#">Игры для PC</a></li>
-            <li class="footer-link"><a href="#">Ключи активации</a></li>
-            <li class="footer-link"><a href="#">Донат и Валюта</a></li>
-            <li class="footer-link"><a href="#">Подарочные карты</a></li>
-          </ul>
-        </div>
-        
-        <!-- Buyers Column -->
-        <div>
-          <h4 class="footer-title">Покупателям</h4>
-          <ul class="footer-links">
-            <li class="footer-link"><a href="#">Соглашение о конфиденциальности</a></li>
-            <li class="footer-link"><a href="#">Гарантии и возврат</a></li>
-            <li class="footer-link"><a href="#">Правила сервиса</a></li>
-            <li class="footer-link"><a href="#">Поддержка</a></li>
-          </ul>
-        </div>
-        
-        <!-- Social Column -->
-        <div>
-          <h4 class="footer-title">Мы в соцсетях</h4>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Telegram">✈️</a>
-            <a href="#" class="social-link" aria-label="Discord">💬</a>
-            <a href="#" class="social-link" aria-label="TikTok">🎵</a>
-            <a href="#" class="social-link" aria-label="VK">📘</a>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p class="footer-copyright">© 2024 NEXUS GAMES. Все права защищены.</p>
-        <div class="footer-legal">
-          <a href="#">Политика конфиденциальности</a>
-          <a href="#">Публичная оферта</a>
-        </div>
-      </div>
     </div>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
+    <!-- ========================================
+         МОДАЛЬНОЕ ОКНО - ЧЕККАУТ
+         ======================================== -->
+    <div class="modal-overlay" id="checkoutModal">
+        <div class="modal">
+            <button class="modal-close">×</button>
+            <h3 class="modal-title">Экспресс-покупка</h3>
+            <p class="modal-subtitle">Быстрое оформление заказа</p>
+            
+            <div class="checkout-total">
+                <span class="total-label">Товар: <span class="checkout-product-name">Название товара</span></span>
+                <span class="total-amount checkout-total-amount">0 ₸</span>
+            </div>
+            
+            <p class="form-label" style="margin-bottom: 1rem;">Выберите способ оплаты:</p>
+            <div class="payment-options">
+                <div class="payment-option">
+                    <div class="payment-option-icon">💳</div>
+                    <div class="payment-option-name">Kaspi Gold</div>
+                </div>
+                <div class="payment-option">
+                    <div class="payment-option-icon">💳</div>
+                    <div class="payment-option-name">Карта</div>
+                </div>
+                <div class="payment-option">
+                    <div class="payment-option-icon">₿</div>
+                    <div class="payment-option-name">Крипта</div>
+                </div>
+            </div>
+            
+            <form class="modal-form" id="checkoutForm">
+                <div class="form-group">
+                    <label class="form-label">Email для получения ключа</label>
+                    <input type="email" class="form-input" placeholder="your@email.com" required>
+                </div>
+                <button type="submit" class="btn btn-success" style="width: 100%;">
+                    Оплатить и получить ключ
+                </button>
+            </form>
+            
+            <p style="text-align: center; margin-top: 1rem; color: var(--text-secondary); font-size: 0.85rem;">
+                🔒 Безопасная оплата через защищённый шлюз
+            </p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
 </body>
 </html>
