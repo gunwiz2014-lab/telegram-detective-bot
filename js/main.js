@@ -1,359 +1,566 @@
-/**
- * NEXUS GAMES - Основной JavaScript
- * Интерактивный функционал лендинга
- */
+/* ========================================
+   NEXUS GAMES - Основной JavaScript
+   Gaming Marketplace Functionality
+   ======================================== */
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Инициализация всех модулей
-  initMobileMenu();
-  initTimer();
-  initTabs();
-  initAccordion();
-  initReviewsSlider();
-  initScrollAnimations();
-  initRippleEffect();
-  initCurrencySelector();
-  initSearchScroll();
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // ========================================
+    // 1. Header Scroll Effect
+    // ========================================
+    const header = document.querySelector('.header');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+    
+    // ========================================
+    // 2. Mobile Menu Toggle
+    // ========================================
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.classList.toggle('active');
+        });
+    }
+    
+    // ========================================
+    // 3. Countdown Timer
+    // ========================================
+    function initCountdownTimer() {
+        const timerElements = document.querySelectorAll('.timer');
+        
+        timerElements.forEach(timer => {
+            const hoursEl = timer.querySelector('.timer-hours');
+            const minutesEl = timer.querySelector('.timer-minutes');
+            const secondsEl = timer.querySelector('.timer-seconds');
+            
+            // Set countdown to 24 hours from now
+            let totalSeconds = 24 * 60 * 60;
+            
+            const updateTimer = () => {
+                if (totalSeconds <= 0) {
+                    totalSeconds = 24 * 60 * 60; // Reset
+                }
+                
+                const hours = Math.floor(totalSeconds / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+                
+                if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+                if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+                if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
+                
+                totalSeconds--;
+            };
+            
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        });
+    }
+    
+    initCountdownTimer();
+    
+    // ========================================
+    // 4. Product Tabs & Filtering
+    // ========================================
+    function initProductTabs() {
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabButtons.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked tab
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                
+                // Filter products
+                productCards.forEach(card => {
+                    const category = card.dataset.category;
+                    
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.remove('fade-in');
+                    }
+                });
+            });
+        });
+    }
+    
+    initProductTabs();
+    
+    // ========================================
+    // 5. FAQ Accordion
+    // ========================================
+    function initFAQ() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(i => i.classList.remove('active'));
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    }
+    
+    initFAQ();
+    
+    // ========================================
+    // 6. Reviews Slider
+    // ========================================
+    function initReviewsSlider() {
+        const track = document.querySelector('.reviews-track');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        
+        if (!track || !prevBtn || !nextBtn) return;
+        
+        let currentIndex = 0;
+        const cardWidth = 365; // card width + gap
+        
+        const updateSlider = () => {
+            const maxIndex = Math.ceil(track.children.length - 3);
+            track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+        };
+        
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateSlider();
+            }
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            const maxIndex = Math.ceil(track.children.length - 3);
+            if (currentIndex < maxIndex) {
+                currentIndex++;
+                updateSlider();
+            }
+        });
+        
+        // Auto-scroll every 5 seconds
+        setInterval(() => {
+            const maxIndex = Math.ceil(track.children.length - 3);
+            if (currentIndex >= maxIndex) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+            updateSlider();
+        }, 5000);
+    }
+    
+    initReviewsSlider();
+    
+    // ========================================
+    // 7. Modal System (Login & Checkout)
+    // ========================================
+    function initModals() {
+        // Login Modal
+        const loginBtns = document.querySelectorAll('[data-modal="login"]');
+        const loginModal = document.getElementById('loginModal');
+        
+        loginBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal(loginModal);
+            });
+        });
+        
+        // Checkout Modal
+        const checkoutBtns = document.querySelectorAll('[data-modal="checkout"]');
+        const checkoutModal = document.getElementById('checkoutModal');
+        
+        checkoutBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const productCard = btn.closest('.product-card');
+                const productName = productCard.querySelector('.product-title').textContent;
+                const productPrice = productCard.querySelector('.new-price').textContent;
+                
+                // Update modal content
+                document.querySelector('.checkout-product-name').textContent = productName;
+                document.querySelector('.checkout-total-amount').textContent = productPrice;
+                
+                openModal(checkoutModal);
+            });
+        });
+        
+        // Close modals
+        const closeButtons = document.querySelectorAll('.modal-close');
+        const overlays = document.querySelectorAll('.modal-overlay');
+        
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const overlay = btn.closest('.modal-overlay');
+                closeModal(overlay);
+            });
+        });
+        
+        // Close on overlay click
+        overlays.forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    closeModal(overlay);
+                }
+            });
+        });
+        
+        // Payment options selection
+        const paymentOptions = document.querySelectorAll('.payment-option');
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                paymentOptions.forEach(o => o.classList.remove('selected'));
+                option.classList.add('selected');
+            });
+        });
+    }
+    
+    function openModal(modal) {
+        if (!modal) return;
+        modal.classList.add('active');
+        document.body.classList.add('scroll-hidden');
+    }
+    
+    function closeModal(modal) {
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.classList.remove('scroll-hidden');
+    }
+    
+    initModals();
+    
+    // ========================================
+    // 8. Search Functionality
+    // ========================================
+    function initSearch() {
+        const searchInput = document.querySelector('.search-input');
+        const searchBtn = document.querySelector('.search-btn');
+        
+        if (!searchInput || !searchBtn) return;
+        
+        const performSearch = () => {
+            const query = searchInput.value.trim().toLowerCase();
+            
+            if (query) {
+                // Scroll to products section
+                const productsSection = document.getElementById('products');
+                if (productsSection) {
+                    productsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+                
+                // Filter products by name
+                const productCards = document.querySelectorAll('.product-card');
+                productCards.forEach(card => {
+                    const title = card.querySelector('.product-title').textContent.toLowerCase();
+                    
+                    if (title.includes(query)) {
+                        card.style.display = 'block';
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Activate "All hits" tab
+                const allTab = document.querySelector('[data-filter="all"]');
+                if (allTab) {
+                    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                    allTab.classList.add('active');
+                }
+            }
+        };
+        
+        searchBtn.addEventListener('click', performSearch);
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+    }
+    
+    initSearch();
+    
+    // ========================================
+    // 9. Quick Tags Filter
+    // ========================================
+    function initQuickTags() {
+        const tags = document.querySelectorAll('.tag');
+        
+        tags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                const searchTerm = tag.textContent.replace('#', '');
+                const searchInput = document.querySelector('.search-input');
+                
+                if (searchInput) {
+                    searchInput.value = searchTerm;
+                    searchInput.dispatchEvent(new Event('keypress'));
+                }
+            });
+        });
+    }
+    
+    initQuickTags();
+    
+    // ========================================
+    // 10. Category Cards Animation
+    // ========================================
+    function initCategoryAnimations() {
+        const categoryCards = document.querySelectorAll('.category-card');
+        
+        categoryCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    }
+    
+    initCategoryAnimations();
+    
+    // ========================================
+    // 11. Ripple Effect on Buttons
+    // ========================================
+    function initRippleEffect() {
+        const buttons = document.querySelectorAll('.btn-ripple, .btn-primary, .btn-success');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.width = '100px';
+                ripple.style.height = '100px';
+                ripple.style.marginLeft = '-50px';
+                ripple.style.marginTop = '-50px';
+                ripple.style.pointerEvents = 'none';
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    }
+    
+    initRippleEffect();
+    
+    // ========================================
+    // 12. Intersection Observer for Animations
+    // ========================================
+    function initScrollAnimations() {
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements
+        const animateElements = document.querySelectorAll('.category-card, .product-card, .feature-card, .review-card, .faq-item');
+        animateElements.forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    }
+    
+    initScrollAnimations();
+    
+    // ========================================
+    // 13. Currency Switcher
+    // ========================================
+    function initCurrencySwitcher() {
+        const currencySelector = document.querySelector('.currency-selector');
+        
+        if (currencySelector) {
+            currencySelector.addEventListener('change', (e) => {
+                const currency = e.target.value;
+                const prices = document.querySelectorAll('.new-price, .old-price');
+                
+                // Simple conversion demo (in real app, fetch actual rates)
+                const rates = {
+                    'KZT': 1,
+                    'RUB': 0.85,
+                    'USD': 0.0022
+                };
+                
+                prices.forEach(price => {
+                    const originalPrice = parseFloat(price.dataset.original) || 
+                                         parseFloat(price.textContent.replace(/\D/g, ''));
+                    
+                    if (!price.dataset.original) {
+                        price.dataset.original = originalPrice;
+                    }
+                    
+                    const convertedPrice = (originalPrice * rates[currency]).toFixed(0);
+                    
+                    const symbols = {
+                        'KZT': '₸',
+                        'RUB': '₽',
+                        'USD': '$'
+                    };
+                    
+                    price.textContent = `${convertedPrice} ${symbols[currency]}`;
+                });
+            });
+        }
+    }
+    
+    initCurrencySwitcher();
+    
+    // ========================================
+    // 14. Smooth Scroll for Navigation Links
+    // ========================================
+    function initSmoothScroll() {
+        const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetSection.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+    
+    initSmoothScroll();
+    
+    // ========================================
+    // 15. Form Validation (Login/Checkout)
+    // ========================================
+    function initFormValidation() {
+        const loginForm = document.getElementById('loginForm');
+        const checkoutForm = document.getElementById('checkoutForm');
+        
+        if (loginForm) {
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = loginForm.querySelector('input[type="email"]').value;
+                const password = loginForm.querySelector('input[type="password"]').value;
+                
+                if (email && password) {
+                    // Simulate login
+                    alert('Вход выполнен успешно! Добро пожаловать в NEXUS GAMES!');
+                    closeModal(document.getElementById('loginModal'));
+                }
+            });
+        }
+        
+        if (checkoutForm) {
+            checkoutForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const selectedPayment = document.querySelector('.payment-option.selected');
+                
+                if (selectedPayment) {
+                    // Simulate purchase
+                    alert('Покупка оформлена! Ключ активации отправлен на вашу почту.');
+                    closeModal(document.getElementById('checkoutModal'));
+                } else {
+                    alert('Пожалуйста, выберите способ оплаты.');
+                }
+            });
+        }
+    }
+    
+    initFormValidation();
+    
+    console.log('🎮 NEXUS GAMES initialized successfully!');
 });
 
-/**
- * Мобильное меню
- */
-function initMobileMenu() {
-  const toggle = document.querySelector('.mobile-toggle');
-  const menu = document.querySelector('.mobile-menu');
-  const links = document.querySelectorAll('.mobile-menu-link');
-  
-  if (!toggle || !menu) return;
-  
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    toggle.classList.toggle('active');
-  });
-  
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      menu.classList.remove('active');
-      toggle.classList.remove('active');
-    });
-  });
+// ========================================
+// Additional Utility Functions
+// ========================================
+
+// Format price with spaces (e.g., 4 500 instead of 4500)
+function formatPrice(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 }
 
-/**
- * Таймер обратного отсчета
- */
-function initTimer() {
-  const timerElement = document.querySelector('.hero-card-timer-value');
-  if (!timerElement) return;
-  
-  // Устанавливаем время окончания акции (24 часа от текущего момента)
-  let endTime = localStorage.getItem('nexus_promo_end');
-  
-  if (!endTime) {
-    endTime = Date.now() + (24 * 60 * 60 * 1000);
-    localStorage.setItem('nexus_promo_end', endTime);
-  }
-  
-  function updateTimer() {
-    const now = Date.now();
-    const remaining = Math.max(0, endTime - now);
-    
-    if (remaining === 0) {
-      // Сброс таймера
-      endTime = Date.now() + (24 * 60 * 60 * 1000);
-      localStorage.setItem('nexus_promo_end', endTime);
-    }
-    
-    const hours = Math.floor(remaining / (1000 * 60 * 60));
-    const minutes = Math.floor((remaining % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((remaining % (1000 * 60)) / 1000);
-    
-    timerElement.textContent = 
-      `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-  }
-  
-  updateTimer();
-  setInterval(updateTimer, 1000);
+// Get random number between min and max
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-/**
- * Табы товаров
- */
-function initTabs() {
-  const tabButtons = document.querySelectorAll('.tab-btn');
-  const productGrids = document.querySelectorAll('.products-grid');
-  
-  tabButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const target = button.dataset.tab;
-      
-      // Удаляем активный класс у всех кнопок
-      tabButtons.forEach(btn => btn.classList.remove('active'));
-      // Добавляем активный класс нажатой кнопке
-      button.classList.add('active');
-      
-      // Скрываем все сетки товаров
-      productGrids.forEach(grid => {
-        grid.style.display = 'none';
-        grid.classList.remove('visible');
-      });
-      
-      // Показываем нужную сетку
-      const targetGrid = document.querySelector(`.products-grid[data-category="${target}"]`);
-      if (targetGrid) {
-        setTimeout(() => {
-          targetGrid.style.display = 'grid';
-          setTimeout(() => targetGrid.classList.add('visible'), 50);
-        }, 100);
-      }
-    });
-  });
+// Debounce function for performance
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
 }
 
-/**
- * Аккордеон FAQ
- */
-function initAccordion() {
-  const accordionItems = document.querySelectorAll('.accordion-item');
-  
-  accordionItems.forEach(item => {
-    const header = item.querySelector('.accordion-header');
-    const content = item.querySelector('.accordion-content');
-    
-    if (!header || !content) return;
-    
-    header.addEventListener('click', () => {
-      const isActive = item.classList.contains('active');
-      
-      // Закрываем все остальные items
-      accordionItems.forEach(otherItem => {
-        if (otherItem !== item) {
-          otherItem.classList.remove('active');
-          otherItem.querySelector('.accordion-content').style.maxHeight = '0';
+// Local Storage Helper
+const Storage = {
+    get: (key) => {
+        try {
+            return JSON.parse(localStorage.getItem(key));
+        } catch {
+            return null;
         }
-      });
-      
-      // Переключаем текущий item
-      if (isActive) {
-        item.classList.remove('active');
-        content.style.maxHeight = '0';
-      } else {
-        item.classList.add('active');
-        content.style.maxHeight = content.scrollHeight + 'px';
-      }
-    });
-  });
-}
-
-/**
- * Слайдер отзывов
- */
-function initReviewsSlider() {
-  const track = document.querySelector('.reviews-track');
-  const prevBtn = document.querySelector('.reviews-prev');
-  const nextBtn = document.querySelector('.reviews-next');
-  const cards = document.querySelectorAll('.review-card');
-  
-  if (!track || !prevBtn || !nextBtn || cards.length === 0) return;
-  
-  let currentIndex = 0;
-  const totalCards = cards.length;
-  
-  function getCardsPerView() {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 768) return 2;
-    return 1;
-  }
-  
-  function updateSlider() {
-    const cardsPerView = getCardsPerView();
-    const maxIndex = Math.max(0, totalCards - cardsPerView);
-    currentIndex = Math.min(Math.max(0, currentIndex), maxIndex);
-    
-    const cardWidth = cards[0].offsetWidth + 24; // 24px gap
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    
-    // Обновляем состояние кнопок
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex >= maxIndex;
-    prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-    nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
-  }
-  
-  prevBtn.addEventListener('click', () => {
-    currentIndex--;
-    updateSlider();
-  });
-  
-  nextBtn.addEventListener('click', () => {
-    currentIndex++;
-    updateSlider();
-  });
-  
-  // Автопрокрутка
-  let autoScrollInterval = setInterval(() => {
-    const cardsPerView = getCardsPerView();
-    if (currentIndex >= totalCards - cardsPerView) {
-      currentIndex = 0;
-    } else {
-      currentIndex++;
+    },
+    set: (key, value) => {
+        localStorage.setItem(key, JSON.stringify(value));
+    },
+    remove: (key) => {
+        localStorage.removeItem(key);
     }
-    updateSlider();
-  }, 5000);
-  
-  // Остановка автопрокрутки при наведении
-  track.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
-  track.addEventListener('mouseleave', () => {
-    autoScrollInterval = setInterval(() => {
-      const cardsPerView = getCardsPerView();
-      if (currentIndex >= totalCards - cardsPerView) {
-        currentIndex = 0;
-      } else {
-        currentIndex++;
-      }
-      updateSlider();
-    }, 5000);
-  });
-  
-  // Пересчет при изменении размера окна
-  window.addEventListener('resize', updateSlider);
-  
-  // Инициализация
-  updateSlider();
-}
-
-/**
- * Анимации при скролле (Intersection Observer)
- */
-function initScrollAnimations() {
-  const elements = document.querySelectorAll('.fade-in');
-  
-  if (elements.length === 0) return;
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  });
-  
-  elements.forEach(el => observer.observe(el));
-}
-
-/**
- * Ripple эффект на кнопках
- */
-function initRippleEffect() {
-  const buttons = document.querySelectorAll('.btn');
-  
-  buttons.forEach(button => {
-    button.addEventListener('click', function(e) {
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple';
-      ripple.style.left = x + 'px';
-      ripple.style.top = y + 'px';
-      
-      this.appendChild(ripple);
-      
-      setTimeout(() => ripple.remove(), 600);
-    });
-  });
-}
-
-/**
- * Переключатель валют
- */
-function initCurrencySelector() {
-  const selector = document.querySelector('.currency-selector');
-  const currencies = ['KZT', 'RUB', 'USD'];
-  let currentIndex = 0;
-  
-  if (!selector) return;
-  
-  selector.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % currencies.length;
-    selector.innerHTML = `
-      <span>💱</span>
-      <span>${currencies[currentIndex]}</span>
-      <span>▼</span>
-    `;
-    
-    // Здесь можно добавить логику конвертации цен
-    console.log(`Валюта переключена на: ${currencies[currentIndex]}`);
-  });
-}
-
-/**
- * Плавный скролл к результатам поиска
- */
-function initSearchScroll() {
-  const searchInput = document.querySelector('.search-input');
-  const searchBtn = document.querySelector('.search-btn');
-  const productsSection = document.querySelector('#products');
-  
-  if (!searchInput || !searchBtn || !productsSection) return;
-  
-  function handleSearch() {
-    const query = searchInput.value.trim();
-    if (query) {
-      productsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Здесь можно добавить фильтрацию товаров
-      console.log('Поиск:', query);
-    }
-  }
-  
-  searchBtn.addEventListener('click', handleSearch);
-  searchInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') handleSearch();
-  });
-  
-  // Обработка быстрых тегов
-  const quickTags = document.querySelectorAll('.quick-tag');
-  quickTags.forEach(tag => {
-    tag.addEventListener('click', () => {
-      const tagText = tag.textContent.replace('#', '');
-      searchInput.value = tagText;
-      handleSearch();
-    });
-  });
-}
-
-/**
- * Утилита для форматирования цены
- */
-function formatPrice(price, currency = 'KZT') {
-  const symbols = {
-    KZT: '₸',
-    RUB: '₽',
-    USD: '$'
-  };
-  
-  return new Intl.NumberFormat('ru-RU').format(price) + ' ' + symbols[currency];
-}
-
-/**
- * Утилита для получения начальных букв имени
- */
-function getInitials(name) {
-  return name
-    .split(' ')
-    .map(word => word[0])
-    .join('')
-    .toUpperCase()
-    .slice(0, 2);
-}
-
-// Экспорт утилит для внешнего использования
-window.NexusUtils = {
-  formatPrice,
-  getInitials
 };
