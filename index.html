@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS GAMES — Игровой маркетплейс | Ключи, игры и донат по лучшим ценам</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Блок 1: Шапка сайта -->
+    <header class="header" id="header">
+        <div class="container header__container">
+            <a href="#" class="logo">
+                <svg class="logo__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 6H3C1.89543 6 1 6.89543 1 8V16C1 17.1046 1.89543 18 3 18H21C22.1046 18 23 17.1046 23 16V8C23 6.89543 22.1046 6 21 6Z" stroke="url(#logo-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M7 10H7.01" stroke="url(#logo-gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M17 10H17.01" stroke="url(#logo-gradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 13V14" stroke="url(#logo-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="logo-gradient" x1="1" y1="6" x2="23" y2="18" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#6366F1"/>
+                            <stop offset="1" stop-color="#F3F4F6"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo__text">NEXUS GAMES</span>
+            </a>
+
+            <nav class="nav" id="nav">
+                <ul class="nav__list">
+                    <li><a href="#catalog" class="nav__link">Каталог</a></li>
+                    <li><a href="#guarantees" class="nav__link">Гарантии</a></li>
+                    <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+                    <li><a href="#faq" class="nav__link">FAQ</a></li>
+                    <li><a href="#support" class="nav__link">Поддержка</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__status">
+                <span class="status-dot"></span>
+                <span class="status-text">Серверы работают: 99.9%</span>
+            </div>
+
+            <div class="header__auth">
+                <button class="btn btn--steam">
+                    <svg class="btn__icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.979 0C5.668 0 .511 4.924.022 11.127l4.849 7.09c.69-.456 1.51-.725 2.392-.725.077 0 .152.005.227.01L11.337 9.81A4.173 4.173 0 0111.98 9.4c2.306 0 4.176 1.87 4.176 4.177 0 .187-.015.37-.042.55l7.27 4.654C23.79 17.67 24 16.596 24 11.98 24 5.365 18.627 0 11.979 0zM8.533 18.875c-1.556 0-2.817-1.262-2.817-2.817 0-1.556 1.261-2.817 2.817-2.817 1.555 0 2.817 1.261 2.817 2.817 0 1.555-1.262 2.817-2.817 2.817zm6.769-3.622c-.328.206-.714.327-1.129.327-1.166 0-2.111-.945-2.111-2.111 0-.327.076-.635.208-.912l-3.33 6.66c.78.536 1.726.853 2.747.853 2.673 0 4.84-2.167 4.84-4.84 0-.675-.14-1.317-.39-1.902l-.835 1.925z"/>
+                    </svg>
+                    Войти через Steam
+                </button>
+                <div class="currency-selector">
+                    <select class="currency-select">
+                        <option value="KZT">KZT</option>
+                        <option value="RUB">RUB</option>
+                        <option value="USD">USD</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Блок 2: Главный экран (Hero Section) -->
+        <section class="hero" id="hero">
+            <div class="hero__background"></div>
+            <div class="container hero__container">
+                <div class="hero__content">
+                    <div class="hero__badge">
+                        <svg class="hero__badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="#6366F1" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>⚡ Мгновенная выдача ключей 24/7</span>
+                    </div>
+                    
+                    <h1 class="hero__title">
+                        Игры, ключи и донат по <span class="highlight">лучшим ценам</span> без переплат
+                    </h1>
+                    
+                    <p class="hero__subtitle">
+                        Официальный маркетплейс с защитой сделок Escrow. Покупай хиты, инди и внутриигровую валюту в один клик.
+                    </p>
+                    
+                    <div class="search-bar">
+                        <svg class="search-bar__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="11" cy="11" r="8" stroke="#9CA3AF" stroke-width="2"/>
+                            <path d="M21 21L16.65 16.65" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <input type="text" class="search-bar__input" placeholder="Найти игру, например: Cyberpunk 2077, Steam Wallet, CS2 скины...">
+                        <button class="search-bar__btn">Найти</button>
+                    </div>
+                    
+                    <div class="quick-tags">
+                        <a href="#" class="tag">#Steam</a>
+                        <a href="#" class="tag">#Roblox</a>
+                        <a href="#" class="tag">#Terraria</a>
+                        <a href="#" class="tag">#PlayStation</a>
+                        <a href="#" class="tag tag--accent">#Топ скидки</a>
+                    </div>
+                </div>
+                
+                <div class="hero__visual">
+                    <div class="hero-card">
+                        <div class="hero-card__image">
+                            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=800&fit=crop" alt="Игра недели">
+                            <div class="hero-card__discount">-45%</div>
+                        </div>
+                        <div class="hero-card__info">
+                            <h3 class="hero-card__title">Cyberpunk 2077</h3>
+                            <div class="hero-card__timer">
+                                <span>До конца акции:</span>
+                                <div class="timer" id="heroTimer">
+                                    <span class="timer__item"><span class="timer__value" id="hours">23</span><small>ч</small></span>:
+                                    <span class="timer__item"><span class="timer__value" id="minutes">45</span><small>м</small></span>:
+                                    <span class="timer__item"><span class="timer__value" id="seconds">30</span><small>с</small></span>
+                                </div>
+                            </div>
+                            <div class="hero-card__price">
+                                <span class="price-old">12 990 ₸</span>
+                                <span class="price-new">7 145 ₸</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 3: Популярные категории -->
+        <section class="categories" id="catalog">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Популярные категории</h2>
+                    <a href="#" class="btn btn--outline">Смотреть все каталоги →</a>
+                </div>
+                
+                <div class="categories-grid">
+                    <a href="#" class="category-card">
+                        <div class="category-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="6" width="20" height="12" rx="2" stroke="#6366F1" stroke-width="2"/>
+                                <path d="M6 10H6.01" stroke="#6366F1" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M18 10H18.01" stroke="#6366F1" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M12 14V15" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="category-card__title">Игры для PC</h3>
+                        <p class="category-card__desc">Более 5000 игр</p>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 3L5 7V17L9 21H15L19 17V7L15 3H9Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 3V7H15V3" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 12V12.01" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="category-card__title">Ключи активации</h3>
+                        <p class="category-card__desc">Официальные ключи</p>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="#6366F1" stroke-width="2"/>
+                                <path d="M12 6V12L16 14" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="category-card__title">Донат и Валюта</h3>
+                        <p class="category-card__desc">Для всех популярных игр</p>
+                    </a>
+                    
+                    <a href="#" class="category-card">
+                        <div class="category-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="category-card__title">Подписки и Сервисы</h3>
+                        <p class="category-card__desc">Xbox, PS Plus, GeForce</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 4: Витрина товаров / Горячие предложения -->
+        <section class="products" id="trending">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Горячие предложения</h2>
+                </div>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="all">Все хиты</button>
+                    <button class="tab" data-tab="discounts">Скидки дня</button>
+                    <button class="tab" data-tab="preorders">Предзаказы</button>
+                    <button class="tab" data-tab="currency">Игровая валюта</button>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- Товар 1 -->
+                    <div class="product-card" data-category="all discounts">
+                        <div class="product-card__badge">-40%</div>
+                        <img src="https://images.unsplash.com/photo-1612287230217-969d6e67f695?w=400&h=500&fit=crop" alt="Elden Ring" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Elden Ring</h3>
+                            <div class="product-card__platform">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 6H3C1.89543 6 1 6.89543 1 8V16C1 17.1046 1.89543 18 3 18H21C22.1046 18 23 17.1046 23 16V8C23 6.89543 22.1046 6 21 6Z" stroke="#9CA3AF" stroke-width="2"/>
+                                </svg>
+                                Steam
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-old">19 990 ₸</span>
+                                <span class="price-new">11 994 ₸</span>
+                            </div>
+                            <button class="btn btn--primary btn--full">Купить в 1 клик</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 2 -->
+                    <div class="product-card" data-category="all currency">
+                        <div class="product-card__badge">-25%</div>
+                        <img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef04?w=400&h=500&fit=crop" alt="Genshin Impact" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Genshin Impact</h3>
+                            <div class="product-card__platform">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="12" cy="12" r="10" stroke="#9CA3AF" stroke-width="2"/>
+                                </svg>
+                                MiHoYo
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-old">5 000 ₸</span>
+                                <span class="price-new">3 750 ₸</span>
+                            </div>
+                            <button class="btn btn--primary btn--full">Купить в 1 клик</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 3 -->
+                    <div class="product-card" data-category="all discounts preorders">
+                        <div class="product-card__badge">-50%</div>
+                        <img src="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?w=400&h=500&fit=crop" alt="The Witcher 3" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">The Witcher 3: Wild Hunt</h3>
+                            <div class="product-card__platform">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21 6H3C1.89543 6 1 6.89543 1 8V16C1 17.1046 1.89543 18 3 18H21C22.1046 18 23 17.1046 23 16V8C23 6.89543 22.1046 6 21 6Z" stroke="#9CA3AF" stroke-width="2"/>
+                                </svg>
+                                Steam
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-old">9 990 ₸</span>
+                                <span class="price-new">4 995 ₸</span>
+                            </div>
+                            <button class="btn btn--primary btn--full">Купить в 1 клик</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Товар 4 -->
+                    <div class="product-card" data-category="all">
+                        <div class="product-card__badge">-30%</div>
+                        <img src="https://images.unsplash.com/photo-1593305841991-05c29736cef7?w=400&h=500&fit=crop" alt="Call of Duty" class="product-card__image">
+                        <div class="product-card__info">
+                            <h3 class="product-card__title">Call of Duty: Modern Warfare III</h3>
+                            <div class="product-card__platform">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <rect x="2" y="6" width="20" height="12" rx="2" stroke="#9CA3AF" stroke-width="2"/>
+                                </svg>
+                                Battle.net
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-old">29 990 ₸</span>
+                                <span class="price-new">20 993 ₸</span>
+                            </div>
+                            <button class="btn btn--primary btn--full">Купить в 1 клик</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 5: Преимущества -->
+        <section class="benefits" id="guarantees">
+            <div class="container">
+                <h2 class="section-title section-title--center">Почему геймеры выбирают NEXUS</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#6366F1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-card__title">Мгновенная доставка</h3>
+                        <p class="benefit-card__desc">Ключ или товар приходит на почту и в личный кабинет за 3 секунды после оплаты.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22S20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 12L11 14L15 10" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-card__title">Безопасная сделка (Escrow)</h3>
+                        <p class="benefit-card__desc">Деньги перечисляются продавцу только после успешной активации товара.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21 15C21 15.5523 20.5523 16 20 16H19V19C19 19.5523 18.5523 20 18 20H6C5.44772 20 5 19.5523 5 19V16H4C3.44772 16 3 15.5523 3 15V5C3 4.44772 3.44772 4 4 4H20C20.5523 4 21 4.44772 21 5V15Z" stroke="#6366F1" stroke-width="2"/>
+                                <path d="M12 8V12" stroke="#6366F1" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="12" cy="16" r="1" fill="#6366F1"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-card__title">Поддержка 24/7</h3>
+                        <p class="benefit-card__desc">Живые операторы готовы помочь решить любой вопрос в чате за 60 секунд.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-card__icon">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-card__title">Лучшие цены</h3>
+                        <p class="benefit-card__desc">Прямые поставки от издателей и партнёрские скидки до 70%.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 6: Отзывы -->
+        <section class="reviews" id="reviews">
+            <div class="container">
+                <div class="reviews-header">
+                    <div class="reviews-rating">
+                        <div class="rating-stars">★★★★★</div>
+                        <span class="rating-value">4.9 / 5.0</span>
+                        <span class="rating-count">на основе 14,200+ отзывов</span>
+                    </div>
+                </div>
+                
+                <div class="reviews-slider" id="reviewsSlider">
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop" alt="User" class="review-card__avatar">
+                            <div class="review-card__user">
+                                <span class="review-card__name">Alex_Gamer</span>
+                                <span class="review-card__purchase">Купил: Elden Ring Key</span>
+                            </div>
+                        </div>
+                        <div class="review-card__stars">★★★★★</div>
+                        <p class="review-card__text">Всё пришло моментально! Ключ активировался без проблем. Цены реально ниже чем в официальном магазине. Буду покупать ещё!</p>
+                        <div class="review-card__verified">✓ Подтверждённая покупка</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="User" class="review-card__avatar">
+                            <div class="review-card__user">
+                                <span class="review-card__name">Marina_KZ</span>
+                                <span class="review-card__purchase">Купил: Genshin Impact Genesis Crystals</span>
+                            </div>
+                        </div>
+                        <div class="review-card__stars">★★★★★</div>
+                        <p class="review-card__text">Очень удобный сайт и быстрая поддержка. Помогли разобраться с оплатой через Kaspi. Донат пришёл за 2 минуты!</p>
+                        <div class="review-card__verified">✓ Подтверждённая покупка</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=100&h=100&fit=crop" alt="User" class="review-card__avatar">
+                            <div class="review-card__user">
+                                <span class="review-card__name">ProPlayer_2024</span>
+                                <span class="review-card__purchase">Купил: Xbox Game Pass Ultimate</span>
+                            </div>
+                        </div>
+                        <div class="review-card__stars">★★★★★</div>
+                        <p class="review-card__text">Подписка активировалась сразу. Цена намного выгоднее чем у конкурентов. Рекомендую всем друзьям!</p>
+                        <div class="review-card__verified">✓ Подтверждённая покупка</div>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-card__header">
+                            <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=100&h=100&fit=crop" alt="User" class="review-card__avatar">
+                            <div class="review-card__user">
+                                <span class="review-card__name">DimonSteam</span>
+                                <span class="review-card__purchase">Купил: Cyberpunk 2077 Phantom Liberty</span>
+                            </div>
+                        </div>
+                        <div class="review-card__stars">★★★★☆</div>
+                        <p class="review-card__text">Хороший сервис, единственное — хотелось бы больше способов оплаты. Но в целом всё отлично, ключ работает.</p>
+                        <div class="review-card__verified">✓ Подтверждённая покупка</div>
+                    </div>
+                </div>
+                
+                <div class="reviews-controls">
+                    <button class="reviews-btn" id="prevReview" aria-label="Предыдущий отзыв">←</button>
+                    <button class="reviews-btn" id="nextReview" aria-label="Следующий отзыв">→</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 7: FAQ -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title section-title--center">Часто задаваемые вопросы</h2>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Как активировать полученный ключ в Steam?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>1. Запустите клиент Steam на вашем компьютере.<br>
+                            2. В верхнем меню выберите «Игры» → «Активировать в Steam».<br>
+                            3. Введите ключ, который вы получили от нас, и нажмите «Далее».<br>
+                            4. Игра появится в вашей библиотеке и будет доступна для скачивания.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Что делать, если ключ не подошел?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Не переживайте! Наша служба поддержки решит проблему в течение 15 минут. Напишите нам в чат или на support@nexusgames.kz, приложите скриншот ошибки и мы либо заменим ключ, либо вернём деньги.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Какие способы оплаты вы принимаете?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Мы принимаем:<br>
+                            • Банковские карты (Visa, MasterCard)<br>
+                            • Kaspi Gold / Kaspi QR<br>
+                            • Электронные кошельки (Qiwi, ЮMoney)<br>
+                            • Криптовалюты (Bitcoin, USDT, Ethereum)<br>
+                            • СБП (Система быстрых платежей)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Как быстро я получу товар после оплаты?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>99% заказов обрабатываются автоматически и товар приходит мгновенно (в течение 3-5 секунд) на вашу электронную почту и в личный кабинет на сайте.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Есть ли у вас гарантия возврата средств?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Да, мы предоставляем гарантию возврата средств в случае, если ключ не активируется по нашей вине. Также возможен возврат в течение 14 дней, если товар не был использован.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Блок 8: Финальный CTA -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-title">Готов начать играть без переплат?</h2>
+                    <p class="cta-subtitle">Забирай свою любимую игру прямо сейчас со скидкой до 70%</p>
+                    <a href="#catalog" class="btn btn--large">Перейти в каталог игр</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Блок 9: Футер -->
+    <footer class="footer" id="support">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <a href="#" class="logo logo--footer">
+                        <svg class="logo__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 6H3C1.89543 6 1 6.89543 1 8V16C1 17.1046 1.89543 18 3 18H21C22.1046 18 23 17.1046 23 16V8C23 6.89543 22.1046 6 21 6Z" stroke="url(#logo-gradient-footer)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 10H7.01" stroke="url(#logo-gradient-footer)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 10H17.01" stroke="url(#logo-gradient-footer)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 13V14" stroke="url(#logo-gradient-footer)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <defs>
+                                <linearGradient id="logo-gradient-footer" x1="1" y1="6" x2="23" y2="18" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#6366F1"/>
+                                    <stop offset="1" stop-color="#F3F4F6"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="logo__text">NEXUS GAMES</span>
+                    </a>
+                    <p class="footer-desc">Официальный маркетплейс игровых ключей и цифровых товаров.</p>
+                    <p class="footer-copyright">© 2024 NEXUS GAMES. Все права защищены.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Категории</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Игры</a></li>
+                        <li><a href="#">Донат</a></li>
+                        <li><a href="#">Ключи</a></li>
+                        <li><a href="#">Подарочные карты</a></li>
+                        <li><a href="#">Подписки</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Покупателям</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Соглашение о конфиденциальности</a></li>
+                        <li><a href="#">Гарантии</a></li>
+                        <li><a href="#">Правила возврата</a></li>
+                        <li><a href="#">Поддержка</a></li>
+                        <li><a href="#">Публичная оферта</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4 class="footer-title">Мы в соцсетях</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Telegram">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Discord">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="VK">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.073 2H8.937C5.009 2 2 4.988 2 8.937v6.125C2 18.991 4.988 22 8.937 22h6.125C18.991 22 22 19.013 22 15.063V8.937C22 5.009 19.013 2 15.073 2zM17.84 15.42c.458.458.905.905 1.408 1.217.219.136.192.192-.011.192h-2.01c-.513 0-.938-.158-1.317-.525-.356-.345-.679-.724-1.001-1.091-.23-.264-.448-.39-.735-.39-.298 0-.436.137-.436.436v1.012c0 .311-.137.448-.448.448H11.9c-1.328 0-2.43-.57-3.356-1.541-.275-.286-.516-.608-.757-.927-.115-.148-.23-.286-.368-.413-.126-.115-.264-.17-.424-.17H6.24c-.311 0-.448-.137-.448-.448v-1.012c0-.311.137-.448.448-.448h1.114c.264 0 .436-.137.55-.379.148-.311.264-.633.379-.96.115-.334.219-.679.311-1.024.069-.264.195-.39.459-.39h2.01c.311 0 .448.137.448.448v1.216c0 .241.115.379.356.379.286 0 .527-.148.735-.39.23-.275.448-.561.667-.848.207-.275.436-.527.679-.769.207-.207.436-.311.713-.311h2.01c.311 0 .448.137.448.448v1.012c0 .311-.137.448-.448.448h-.667c-.311 0-.527.137-.667.379-.137.241-.264.493-.379.747-.115.252-.241.493-.379.735-.126.23-.183.436-.183.644 0 .207.057.402.172.584z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-payment">
+                <div class="payment-methods">
+                    <svg viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="50" height="32" rx="4" fill="#1F293D"/>
+                        <text x="25" y="20" text-anchor="middle" fill="#9CA3AF" font-size="8" font-family="Arial">VISA</text>
+                    </svg>
+                    <svg viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="50" height="32" rx="4" fill="#1F293D"/>
+                        <text x="25" y="20" text-anchor="middle" fill="#9CA3AF" font-size="8" font-family="Arial">MC</text>
+                    </svg>
+                    <svg viewBox="0 0 50 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="50" height="32" rx="4" fill="#1F293D"/>
+                        <text x="25" y="20" text-anchor="middle" fill="#9CA3AF" font-size="8" font-family="Arial">Kaspi</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
