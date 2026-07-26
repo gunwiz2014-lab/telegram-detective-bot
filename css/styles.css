@@ -49,6 +49,11 @@
     --border-radius-md: 12px;
     --border-radius-lg: 16px;
     --border-radius-xl: 24px;
+
+    /* Glassmorphism */
+    --glass-bg: rgba(19, 24, 35, 0.8);
+    --glass-blur: blur(12px);
+    --glass-border: rgba(31, 41, 61, 0.5);
 }
 
 /* ========================================
