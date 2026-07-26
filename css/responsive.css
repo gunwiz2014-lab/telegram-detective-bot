@@ -1,0 +1,111 @@
+/* ============================================
+   NEXUS GAMES - Адаптивные стили (Mobile First)
+   ============================================ */
+
+/* --- Mobile (< 640px) --- */
+@media (max-width: 639px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .search-box {
+    flex-direction: column;
+  }
+  
+  .search-btn {
+    width: 100%;
+  }
+  
+  .hero-card {
+    max-width: 100%;
+  }
+  
+  .categories-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .cta-title {
+    font-size: 1.75rem;
+  }
+  
+  .cta-btn {
+    width: 100%;
+    padding: 16px 24px;
+  }
+}
+
+/* --- Tablet (640px - 1023px) --- */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-inner {
+    gap: 32px;
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- Desktop (≥ 1024px) --- */
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 40px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* --- Large Desktop (≥ 1280px) --- */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+/* --- Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Print Styles --- */
+@media print {
+  .header,
+  .mobile-toggle,
+  .reviews-nav,
+  .cta,
+  .footer {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .card,
+  .accordion-item {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+  }
+}
